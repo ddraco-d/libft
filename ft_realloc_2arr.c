@@ -1,41 +1,35 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_realloc_2arr.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddraco <ddraco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/21 01:11:30 by ddraco            #+#    #+#             */
-/*   Updated: 2020/12/14 19:55:28 by ddraco           ###   ########.fr       */
+/*   Created: 2020/12/14 19:59:11 by ddraco            #+#    #+#             */
+/*   Updated: 2020/12/14 20:07:09 by ddraco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char		**ft_realloc_2arr(char **arr, int prev_size, int size)
 {
-	char	*rez;
-	size_t	i;
-	size_t	j;
+	char	**res;
+	int		i;
 
-	j = 0;
 	i = 0;
-	if (s1 == NULL || s2 == NULL)
+	res = (char **)malloc((size + 1) * sizeof(char*));
+	if (res == NULL)
 		return (NULL);
-	rez = (char*)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (rez != NULL)
+	while (i < prev_size)
 	{
-		while (s1[i] != '\0')
-		{
-			rez[i] = s1[i];
-			i++;
-		}
-		while (s2[j] != '\0')
-		{
-			rez[i + j] = s2[j];
-			j++;
-		}
-		rez[i + j] = '\0';
+		res[i] = ft_strdup(arr[i]);
+		free(arr[i]);
+		i++;
 	}
-	return (rez);
+	while (i < size + 1)
+		res[i++] = NULL;
+	if (arr && prev_size != 0)
+		free(arr);
+	return (res);
 }

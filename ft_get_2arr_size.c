@@ -1,41 +1,25 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_get_2arr_size.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddraco <ddraco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/21 01:11:30 by ddraco            #+#    #+#             */
-/*   Updated: 2020/12/14 19:55:28 by ddraco           ###   ########.fr       */
+/*   Created: 2020/12/14 20:00:15 by ddraco            #+#    #+#             */
+/*   Updated: 2020/12/14 20:07:29 by ddraco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+int		ft_get_2arr_size(char **lines)
 {
-	char	*rez;
-	size_t	i;
-	size_t	j;
+	int i;
 
-	j = 0;
 	i = 0;
-	if (s1 == NULL || s2 == NULL)
-		return (NULL);
-	rez = (char*)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (rez != NULL)
-	{
-		while (s1[i] != '\0')
-		{
-			rez[i] = s1[i];
-			i++;
-		}
-		while (s2[j] != '\0')
-		{
-			rez[i + j] = s2[j];
-			j++;
-		}
-		rez[i + j] = '\0';
-	}
-	return (rez);
+	if (!lines || !(*lines))
+		return (0);
+	while (lines[i])
+		i++;
+	return (i);
 }

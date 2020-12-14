@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   libft.h                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: ddraco <marvin@42.fr>                      +#+  +:+       +#+        */
+/*   By: ddraco <ddraco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 01:37:34 by ddraco            #+#    #+#             */
-/*   Updated: 2020/05/22 02:55:55 by ddraco           ###   ########.fr       */
+/*   Updated: 2020/12/14 20:11:03 by ddraco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,11 @@ void				ft_putendl_fd(char *s, int fd);
 char				*ft_itoa(int n);
 char				*ft_strmapi(char const *s, char (*f)(unsigned int, char));
 char				**ft_split(char const *s, char c);
+char				*ft_strcpy(char *dst, const char *src);
+char				**ft_realloc_2arr(char **arr, int prev_size, int size);
+void				*ft_realloc(void *ptr, int size, int newsize);
+char				**ft_strdup_2arr(char **arr);
+int					ft_get_2arr_size(char **lines);
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);

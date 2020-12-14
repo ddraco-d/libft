@@ -1,41 +1,33 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_strjoin.c                                       :+:      :+:    :+:   */
+/*   ft_strdup_2arr.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ddraco <ddraco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2020/05/21 01:11:30 by ddraco            #+#    #+#             */
-/*   Updated: 2020/12/14 19:55:28 by ddraco           ###   ########.fr       */
+/*   Created: 2020/12/14 20:01:11 by ddraco            #+#    #+#             */
+/*   Updated: 2020/12/14 20:09:58 by ddraco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
 
-char		*ft_strjoin(char const *s1, char const *s2)
+char		**ft_strdup_2arr(char **arr)
 {
-	char	*rez;
-	size_t	i;
-	size_t	j;
+	char	**res;
+	int		i;
+	int		size;
 
-	j = 0;
+	size = ft_get_2arr_size(arr);
 	i = 0;
-	if (s1 == NULL || s2 == NULL)
+	res = (char **)malloc(sizeof(char*) * (size + 1));
+	if (res == NULL)
 		return (NULL);
-	rez = (char*)malloc((ft_strlen(s1) + ft_strlen(s2) + 1) * sizeof(char));
-	if (rez != NULL)
+	while (i < size)
 	{
-		while (s1[i] != '\0')
-		{
-			rez[i] = s1[i];
-			i++;
-		}
-		while (s2[j] != '\0')
-		{
-			rez[i + j] = s2[j];
-			j++;
-		}
-		rez[i + j] = '\0';
+		res[i] = ft_strdup(arr[i]);
+		i++;
 	}
-	return (rez);
+	res[i] = NULL;
+	return (res);
 }

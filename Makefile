@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: ddraco <marvin@42.fr>                      +#+  +:+       +#+         #
+#    By: ddraco <ddraco@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/22 03:31:07 by ddraco            #+#    #+#              #
-#    Updated: 2020/05/22 03:31:23 by ddraco           ###   ########.fr        #
+#    Updated: 2020/12/14 20:08:38 by ddraco           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -45,7 +45,12 @@ SRC = ft_memset.c \
 		ft_putchar_fd.c \
 		ft_putstr_fd.c \
 		ft_putendl_fd.c \
-		ft_putnbr_fd.c
+		ft_putnbr_fd.c \
+		ft_strcpy.c \
+		ft_get_2arr_size.c \
+		ft_realloc_2arr.c \
+		ft_realloc.c \
+		ft_strdup_2arr.c
 
 BONUS = ft_lstnew.c \
 		ft_lstadd_front.c \
@@ -70,11 +75,11 @@ HEADER = libft.h
 all: $(NAME)
 
 $(NAME): $(OBJS)
-	@ar r $(NAME) $(OBJS)
+	@ar rc $(NAME) $(OBJS)
 	@ranlib $(NAME)
 
 bonus:	$(OBJS) $(OBJSBONUS)
-	@ar r $(NAME) $(OBJS) $(OBJSBONUS)
+	@ar rc $(NAME) $(OBJS) $(OBJSBONUS)
 	@ranlib $(NAME)
 
 clean:
