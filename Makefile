@@ -6,7 +6,7 @@
 #    By: ddraco <ddraco@student.42.fr>              +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2020/05/22 03:31:07 by ddraco            #+#    #+#              #
-#    Updated: 2020/12/14 20:08:38 by ddraco           ###   ########.fr        #
+#    Updated: 2020/12/14 20:37:36 by ddraco           ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -60,7 +60,8 @@ BONUS = ft_lstnew.c \
 		ft_lstdelone.c \
 		ft_lstclear.c \
 		ft_lstiter.c \
-		ft_lstmap.c
+		ft_lstmap.c \
+		ft_strcmp.c \
 		
 OBJS = $(SRC:.c=.o)
 

@@ -6,7 +6,7 @@
 /*   By: ddraco <ddraco@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2020/05/21 01:37:34 by ddraco            #+#    #+#             */
-/*   Updated: 2020/12/14 20:11:03 by ddraco           ###   ########.fr       */
+/*   Updated: 2020/12/14 20:39:07 by ddraco           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 # define LIBFT_H
 
 # include <stdlib.h>
+# include <unistd.h>
 
 typedef	struct		s_list
 {
@@ -61,6 +62,7 @@ char				**ft_realloc_2arr(char **arr, int prev_size, int size);
 void				*ft_realloc(void *ptr, int size, int newsize);
 char				**ft_strdup_2arr(char **arr);
 int					ft_get_2arr_size(char **lines);
+int					ft_strcmp(const char *s1, const char *s2);
 
 t_list				*ft_lstnew(void *content);
 void				ft_lstadd_front(t_list **lst, t_list *new);
